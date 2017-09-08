@@ -4,7 +4,8 @@ RUN apk add --no-cache bash build-base gcc abuild binutils cmake linux-headers
 WORKDIR /workspace
 ADD http://download.osgeo.org/proj/proj-4.9.3.tar.gz .
 ADD http://download.osgeo.org/gdal/2.2.1/gdal221.zip .
-RUN 	cd proj-4.9.3 \ 
+RUN 	   tar -xvf proj-4.9.3.tar.gz \
+	&& cd proj-4.9.3 \ 
 	&& ./configure \
 	&& make \
 	&& make install \
